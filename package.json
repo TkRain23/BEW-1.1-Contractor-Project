@@ -11,7 +11,9 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "kitsu": "^6.4.0",
+    "materialize-css": "^1.0.0-rc.2",
     "morgan": "~1.9.0",
+    "node-kitsu": "^1.1.1",
     "pug": "^2.0.3"
   }
 }

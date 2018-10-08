@@ -6,7 +6,7 @@ block content
 
   h2 Trending Anime
 
+  input#query(name='query')
+  button(onclick='search()' type='submit' class='btn btn-large') search
 
-  ul
-  each show in data
-    a(href=show.links.self): img.trendingImage(src=show.posterImage.medium)
+  div#shows

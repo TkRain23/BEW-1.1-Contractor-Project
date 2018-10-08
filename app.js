@@ -9,6 +9,7 @@ const Kitsu = require('kitsu') // CommonJS and Browserify
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var animeRouter = require('./routes/anime');
 
 var app = express();
 
@@ -24,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/anime', animeRouter);
 // STOP HERE
 
 // catch 404 and forward to error handler
