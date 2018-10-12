@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 // var kitsu = require('../lib/kitsu');
 var kitsu = require('node-kitsu');
-
+const Comment = require('../models/comment')
 router.get('/', function(req, res, next)
 {
     console.log(req.query.query);
@@ -22,7 +22,11 @@ router.get('/:showName', function(req, res, next)
     console.log(req.params)
     kitsu.searchAnime(req.params.showName, 0)
     .then(results => {
-        res.render('anime-show', {title: results[0].attributes.titles.en, result: results[0]})
+        Comment.find({showId: results[0].id})
+        .then(comments => {
+            res.render('anime-show', {title: results[0].attributes.titles.en, result: results[0], comments: comments})
+        })
+
     })
     .catch(err => {
         console.log(err);

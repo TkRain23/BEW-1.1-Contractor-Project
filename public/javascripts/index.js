@@ -26,3 +26,17 @@ function search()
         console.log(error)
     })
 }
+
+function comment()
+{
+    var comment = document.getElementById('comment')
+    var showId = document.getElementById('showId')
+    axios.post('/comments', {comment: comment.value, showId: showId.value })
+    .then(response => {
+        comment.value = ''
+        console.log(response)
+        var comments = document.getElementById('displayComments');
+        comments.innerHTML = `<div>${response.data.comment}</div>  ${comments.innerHTML}`
+
+    })
+}

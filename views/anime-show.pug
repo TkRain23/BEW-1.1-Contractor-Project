@@ -28,8 +28,13 @@ block content
                 span.lever
                 |Seen
             input#comment(name='query')
-            button(onclick='search()' type='submit' class='btn btn-small' id='comment-btn') comment
+            button(onclick='comment()' type='submit' class='btn btn-small' id='comment-btn') comment
+            input#showId(type='hidden' value=result.id)
         div.col.s12
           hr
         div.col.s6#comment-view
           h5  Comments
+
+        div#displayComments
+          each comment in comments
+            div() #{comment.comment}

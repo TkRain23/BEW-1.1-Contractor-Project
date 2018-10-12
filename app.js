@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/sensaku');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var animeRouter = require('./routes/anime');
-
+var commentRouter = require('./routes/comment')
 var app = express();
 
 // view engine setup
@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/anime', animeRouter);
+app.use('/comments', commentRouter)
 // STOP HERE
 
 // catch 404 and forward to error handler
