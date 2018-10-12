@@ -7,6 +7,10 @@ var logger = require('morgan');
 // adding kitsu API requirements
 const Kitsu = require('kitsu') // CommonJS and Browserify
 
+//added mongoose
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/sensaku');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var animeRouter = require('./routes/anime');

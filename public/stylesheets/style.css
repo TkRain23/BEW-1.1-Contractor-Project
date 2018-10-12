@@ -7,7 +7,48 @@ a {
   color: #00B7FF;
 }
 
-.trendingImage {
-    max-width: 200px;
-    margin: 8px;
+#cover
+{
+    width: 100%;
+    border-radius: 3px;
+}
+
+#poster
+{
+    text-align: right;
+}
+
+hr
+{
+    border: none;
+    height: 2px;
+    color: black;
+    background-color: black;
+}
+
+#stats
+{
+    text-align: right;
+    margin-top: 2.8em;
+}
+
+#comment-field
+{
+    display: flex;
+    align-items: center;
+}
+
+#comment-field button
+{
+    margin-left: 10px;
+}
+
+input#comment
+{
+    width: 75%;
+}
+
+#comment-btn
+{
+    margin-bottom: 50px;
 }

@@ -22,7 +22,7 @@ router.get('/:showName', function(req, res, next)
     console.log(req.params)
     kitsu.searchAnime(req.params.showName, 0)
     .then(results => {
-        res.render('anime-show', {result: results[0]})
+        res.render('anime-show', {title: results[0].attributes.titles.en, result: results[0]})
     })
     .catch(err => {
         console.log(err);

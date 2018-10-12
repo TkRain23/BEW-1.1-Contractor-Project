@@ -3,11 +3,33 @@ extends layout
 block content
 
   div.container
-    h1= result.attributes.titles.en
-
-    // TO-DO
-    // Add images
-    // add synopsis
-    //
-    //
-    //
+    div.row
+        div.col.s12
+            a(href="/") back
+            img#cover(src=result.attributes.coverImage.tiny)
+        div.col.s8
+            h1= result.attributes.titles.en
+            hr
+            p= result.attributes.synopsis
+        div.col.s4#stats
+            p
+              b Rank:&nbsp;
+              |##{result.attributes.popularityRank}
+            p
+              b Episodes:&nbsp;
+              |#{result.attributes.episodeCount}
+            p
+              b Status:&nbsp;
+              |#{result.attributes.status}
+            div.switch
+              label
+                |Unseen
+                input(type='checkbox')
+                span.lever
+                |Seen
+            input#comment(name='query')
+            button(onclick='search()' type='submit' class='btn btn-small' id='comment-btn') comment
+        div.col.s12
+          hr
+        div.col.s6#comment-view
+          h5  Comments
