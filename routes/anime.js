@@ -17,4 +17,17 @@ router.get('/', function(req, res, next)
     })
 })
 
+router.get('/:showName', function(req, res, next)
+{
+    console.log(req.params)
+    kitsu.searchAnime(req.params.showName, 0)
+    .then(results => {
+        res.render('anime-show', {result: results[0]})
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(404).send();
+    })
+})
+
 module.exports = router;

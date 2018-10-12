@@ -1,5 +1,3 @@
-
-
 function search()
 {
     var query = document.getElementById('query')
@@ -10,8 +8,7 @@ function search()
         //handle succes
         console.log(response.data)
         var anime = response.data
-
-        var counter = 500
+         var counter = 500
         for (var i = 0; i < anime.length; i++)
         {
             let attributes = anime[i].attributes
@@ -20,7 +17,7 @@ function search()
             }
             counter += 125
             window.setTimeout(() => {shows.innerHTML += `
-            <h1> ${attributes.titles.en} </h1>
+            <h5><a href="/anime/${attributes.titles.en}"> ${attributes.titles.en} </a></h5>
             `
         }, counter);
         }

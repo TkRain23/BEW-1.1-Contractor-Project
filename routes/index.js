@@ -5,8 +5,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Koshin'});
+    res.render('index', { title: 'Sensaku'});
 
 });
+
 
 module.exports = router;

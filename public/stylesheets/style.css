@@ -11,15 +11,3 @@ a {
     max-width: 200px;
     margin: 8px;
 }
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-
-#shows > h1 {
-    animation: fadein 1s;
-}
